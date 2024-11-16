@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="burger-menu">
+            <!-- Icon for the burger menu -->
+            &#9776; <!-- Unicode for burger menu (☰) -->
+        </div>
+        <div class="logo"><a href="/html/index.html">MyLogo</a></div>
+            <ul class="nav-links">
+              <li><a href="/html/index.html">Home</a></li>
+              <li><a href="/html/shop.html">Shop</a></li>
+              <li><a href="/html/cart.html">Cart</a></li>
+              <li><a href="/html/contact.html">Contact</a></li>
+              <li><a href="/html/login.html">Login</a></li>
+            </ul>
+            <!-- Side Menu -->
+<div class="side-menu">
+  <button class="close-btn" onclick="closeMenu()">×</button>
+  <ul>
+    <li><a href="/html/index.html">Home</a></li>
+    <li><a href="/html/shop.html">Shop</a></li>
+    <li><a href="/html/cart.html">Cart</a></li>
+    <li><a href="/html/contact.html">Contact</a></li>
+    <li><a href="/html/login.html">Login</a></li>
+      <h2>Categories</h2>
+      <li><a href="#">T-shirts</a></li>
+      <li><a href="#">Shoes</a></li>
+      <li><a href="#">Pants</a></li>
+      <li><a href="#">Caps</a></li>
+      <li><a href="#">Glasses</a></li>
+  </ul>
+</div>
+<!-- Search Bar -->
+<input type="text" id="searchBar" class="search-bar" placeholder="Search products...">
+        </nav>
+        
+    </header>
+    
+    <main>
+              <!-- Filter Options -->
+              <div class="filter-container">
+                <h3>Filter by Tags</h3>
+                <div id="tags-filter">
+                    <button class="filter-btn" data-tag="">All</button>
+                    <button class="filter-btn" data-tag="tshirt">T-shirt</button>
+                    <button class="filter-btn" data-tag="shoes">Shoes</button>
+                    <button class="filter-btn" data-tag="pants">Pants</button>
+                    <button class="filter-btn" data-tag="caps">Caps</button>
+                    <button class="filter-btn" data-tag="glasses">Glasses</button>
+                </div>
+            </div>
+      <div class="shop">
+        <div class="product-container" data-tags="tshirt">
+          <div class="product-new-container">
+          <div class="product-new">New</div>
+        </div>
+          <div class="product-image"><img src="/images/t-shirt.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Hustle T-Shirt</p>
+            <p class="product-seller">Hustle Pvt. Ltd.</p>
+            <p class="product-price">$20</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Hustle T-Shirt" data-price="20">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <!-- Modal (Pop-up) -->
+<div id="added-to-cart-modal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <p>Added to Cart!</p>
+      <a href="/html/cart.html" class="view-cart-btn">View Cart</a>
+  </div>
+</div>
+        <div class="product-container" data-tags="shoes">
+          <div class="product-new-container">
+          <div class="product-new">New</div>
+        </div>
+          <div class="product-image"><img src="/images/shoes.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Jordans Shoes, Yellow</p>
+            <p class="product-seller">Nike</p>
+            <p class="product-price">$100</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Jordans Shoes, Yellow" data-price="100">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="pants">
+          <div class="product-new-container">
+          <div class="product-new">New</div>
+        </div>
+          <div class="product-image"><img src="/images/pants.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Black Cargo Pants</p>
+            <p class="product-seller">H&M</p>
+            <p class="product-price">$30</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Black Cargo Pants" data-price="30">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="caps">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/caps.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Louis Vuitton Cap, Brown</p>
+            <p class="product-seller">lous vuitton</p>
+            <p class="product-price">$150</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Louis Vuitton Cap, Brown" data-price="150">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="glasses">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/glasses.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Black Sun Glasses</p>
+            <p class="product-seller">Sunny Glasses Pvt. Ltd.</p>
+            <p class="product-price">$200</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Black Sun Glasses" data-price="200">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="caps">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/caps2.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">White Cap</p>
+            <p class="product-seller">Whity Caps</p>
+            <p class="product-price">$5</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="White Cap" data-price="5">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="glasses">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/glasses2.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Stranger Things Sun Glasses, Black</p>
+            <p class="product-seller">Netflix</p>
+            <p class="product-price">$50</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Stranger Things Sun Glasses, Black" data-price="50">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="glasses">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/large.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">50 Ray Band Shades Combo</p>
+            <p class="product-seller">Ray band</p>
+            <p class="product-price">$500</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="50 Ray Band Shades Combo" data-price="500">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="pants">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/pants2.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Bang Jeans</p>
+            <p class="product-seller">Zara</p>
+            <p class="product-price">$25</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Bang Jeans" data-price="25">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="shoes">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/shoes2.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Red Nike Shoes</p>
+            <p class="product-seller">Nike</p>
+            <p class="product-price">$75</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Red Nike Shoes" data-price="75">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="shoes">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/shoes3.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">Jordans Shoes, Blue</p>
+            <p class="product-seller">Nike</p>
+            <p class="product-price">$60</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="Jordans Shoes, Blue" data-price="60">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+        <div class="product-container" data-tags="tshirt">
+          <div class="product-new-container">
+        </div>
+          <div class="product-image"><img src="/images/t-shirt2.png" alt=""></div>
+          <div class="product-text">
+            <p class="product-name">War Never Changes T-Shirt</p>
+            <p class="product-seller">Hustle Pvt. Ltd.</p>
+            <p class="product-price">$5</p>
+            <div class="product-actions">
+              <button class="buy-now">Buy Now</button>
+              <button class="add-to-cart" data-name="War Never Changes T-Shirt" data-price="5">Add to Cart</button>
+              <input type="number" class="quantity" value="1" min="1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+          <!-- Footer Logo and About -->
+          <div class="footer-logo">
+            <h2>YourLogo</h2>
+            <p>Your go-to place for amazing web solutions. Contact us for any inquiries or collaborations!</p>
+          </div>
+      
+          <!-- Footer Links -->
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+      
+          <!-- Footer Contact -->
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@yourwebsite.com</p>
+            <p>Phone: +123 456 7890</p>
+            <p>Address: 123 Main Street, Your City</p>
+          </div>
+        </div>
+      
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2024 YourCompany. All rights reserved.</p>
+        </div>
+      </footer>
+      
+      <script src="/js/shop.js"></script>
+</body>
+</html>
